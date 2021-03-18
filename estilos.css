@@ -1,0 +1,38 @@
+
+
+#video{
+    display: none;
+    width: 60%;
+    margin: auto;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+
+
+#boton{
+    display: none;
+    background-color: rgb(74, 128, 228);
+    color: white;
+    width:450px;
+    text-align: center;  
+    margin: auto;
+    margin-top: 30px; 
+    height: 50px;
+    line-height: 50px;
+    border-radius: 10px;
+    font-size: 24px;
+    text-decoration: none;
+    border: none;
+    outline: none;
+}
+
+#boton:hover{
+    cursor: pointer !important;
+    background-color: rgb(46, 105, 214);
+    transform: scale(1.02   );
+    transition: all 1s;
+    outline: none;
+}
+
+
+
