@@ -1,4 +1,7 @@
-
+h1{
+    display: block;
+    text-align: center;
+}
 
 #video{
     display: none;
@@ -8,12 +11,16 @@
     border-radius: 10px;
 }
 
+.content{
+    display: flex;
+}
 
-#boton{
+.boton{
     display: none;
+    width: 18%;
     background-color: rgb(74, 128, 228);
+    padding: 5px;
     color: white;
-    width:450px;
     text-align: center;  
     margin: auto;
     margin-top: 30px; 
@@ -26,7 +33,7 @@
     outline: none;
 }
 
-#boton:hover{
+.boton:hover{
     cursor: pointer !important;
     background-color: rgb(46, 105, 214);
     transform: scale(1.02   );
