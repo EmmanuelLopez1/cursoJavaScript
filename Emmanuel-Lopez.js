@@ -44,8 +44,9 @@ function mostrarVideo(btn, leyenda) {
 
 let alegre = seleccionBoton("alegre", "./videos/partyRock.mp4");
 let triste = seleccionBoton("triste", "./videos/Recompensa.mp4");
-let dolido = seleccionBoton("dolido", "./videos/me canse de rogarle.mp4");
+let dolido = seleccionBoton("dolido", "./videos/el ultimo trago.mp4"    );
 let muyDolido = seleccionBoton("muy dolido", "./videos/me canse de rogarle.mp4");
 let buchon = seleccionBoton("buchon", "./videos/que caro estoy pagando.webm");
+
 
 
