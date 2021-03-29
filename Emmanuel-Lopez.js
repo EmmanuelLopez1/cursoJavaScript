@@ -49,5 +49,31 @@ let muyDolido = seleccionBoton("muy dolido", "./videos/me canse de rogarle.mp4")
 let buchon = seleccionBoton("buchon", "./videos/que caro estoy pagando.webm");
 */
 
+let btn = document.getElementById("btn").addEventListener("click", () => {
+  let num1 = document.getElementById("num1").value;
+  let num2 = document.getElementById("num2").value;
+  let numeros = document.getElementById("numeros").value;
+  let nodo = document.createElement("p");
 
+  if (num1 == "" || num2 == "" || numeros == "") {
+    alert("Ingresa todos los campos");
+  } else {
+    for (let i = 1; i <= numeros; i++) {
+      if (i % num1 === 0 && i % num2 === 0) {
+        creadNodo("fizzBuzz")
+      } else if (i % num1 === 0) {
+        creadNodo("fizz")
+      } else if (i % num2 === 0) {
+        creadNodo("buzz")
+      } else {
+        creadNodo(i)
+      }
+    }
+  }
+});
 
+function creadNodo(name) {
+  nodo = document.createElement("p");
+  nodo.innerHTML = name;
+  document.getElementById("resultado").appendChild(nodo);
+}
