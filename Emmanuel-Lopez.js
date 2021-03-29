@@ -1,4 +1,4 @@
-let estado = parseInt(prompt("¿Como te sientes el día de hoy?: 1 alegre, 2 triste, 3 dolido, 4 muy dolido y 5 buchon"));
+/*let estado = parseInt(prompt("¿Como te sientes el día de hoy?: 1 alegre, 2 triste, 3 dolido, 4 muy dolido y 5 buchon"));
 estadoEmocional(estado);
 
 function seleccionBoton(name, ruta) {
@@ -44,9 +44,10 @@ function mostrarVideo(btn, leyenda) {
 
 let alegre = seleccionBoton("alegre", "./videos/partyRock.mp4");
 let triste = seleccionBoton("triste", "./videos/Recompensa.mp4");
-let dolido = seleccionBoton("dolido", "./videos/el ultimo trago.mp4"    );
+let dolido = seleccionBoton("dolido", "./videos/el ultimo trago.mp40");
 let muyDolido = seleccionBoton("muy dolido", "./videos/me canse de rogarle.mp4");
 let buchon = seleccionBoton("buchon", "./videos/que caro estoy pagando.webm");
+*/
 
 
 
