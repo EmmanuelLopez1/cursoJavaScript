@@ -24,7 +24,7 @@ button{
 button:hover{
     cursor: pointer;
 }
-p{
+.instrucciones{
     width: 80%;
     margin:50px auto;
     border: 1px solid rgb(1, 90, 255);
@@ -33,6 +33,13 @@ p{
     line-height: 60px;
     letter-spacing: 2px;
     padding: 2%;
+}
+p{
+    width: 80%;
+    margin:25px auto;
+    border: 1px solid rgb(1, 90, 255);
+    border-radius: 5px;
+    padding: 10px;
 }
 /*
 #video{
