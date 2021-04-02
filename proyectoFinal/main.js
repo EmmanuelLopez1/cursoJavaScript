@@ -1,4 +1,4 @@
-window.addEventListener('load',function(){
+/*window.addEventListener('load',function(){
     new Glider(document.querySelector('.carousel__lista'), {
         slidesToShow: 4,
         slidesToScroll: 2,
@@ -10,87 +10,83 @@ window.addEventListener('load',function(){
         }  
     })
 })
+*/
 
 class lista{
-  constructor(genero, autor, cancion){
+  constructor(genero, noTarjetas, srcImg, canciones, autores){
     this.genero = genero;
-    this.autor = autor;
-    this.cancion = cancion;
-    this.crearLista();
-  }
-  saludar(){
-    alert("hello")
-  }
-
-  crearLista(){
-    let main = document.querySelector(".main");
-    let lista = document.createElement("div")
-    lista.setAttribute("class", "lista")
-    this.añadirElemento("h2",  "lista__titulo", lista, this.genero);
-    this.añadirElemento("hr", "lista__separador", lista)
-    this.carousel = this.añadirElemento("div", "carousel", lista)
-    this.crearCarousel();
-    main.append(lista)
-    
+    this.noTarjetas = noTarjetas;
+    this.srcImg = srcImg;
+    this.canciones = canciones;
+    this.autores = autores;
+    this.generarLista();
   }
 
-  añadirElemento(elemento, nombre, padre, contenido){
+  añadirElemento(elemento, nombre, padre, contenido, src){
     let nodo = document.createElement(elemento);
     if(contenido != undefined){
       nodo.innerHTML = contenido;
+    }
+    if(src != undefined){
+      nodo.setAttribute("src", src)
     }
     nodo.setAttribute("class", nombre)
     padre.appendChild(nodo)
     return nodo
   }
 
-  crearCarousel(){
-    let content = this.añadirElemento("div", "carousel__canciones", this.carousel)
-    this.añadirBotones("fas", "fa-chevron-left", "carousel__before", content);
-    let carousel__lista = this.añadirElemento("div", "carousel__lista",  content)
-    this.crearTarjetas(carousel__lista);
-    this.añadirBotones("fas", "fa-chevron-left", "carousel__next", content);
+  generarLista(){
+    let main = document.querySelector(".main")
+    let lista = this.añadirElemento("div", "lista", main)
+    this.elementosLista(lista);
+    console.log(main)
   }
 
-  añadirBotones(class1, class2, classPadre, padre){
-    let boton = document.createElement("button");
-    boton.setAttribute("class", classPadre)
-    let hijo = document.createElement("i");
-    hijo.setAttribute("class", `${class1} ${class2}`)
-    boton.appendChild(hijo)
-    padre.appendChild(boton)
-  }
-  
-  crearTarjetas(carousel__lista){
-    let card = document.createElement("div");
-    card.setAttribute("class", "card");
-    this.crearImagenes(card,"img/1.png")
-    this.cardBody(card,"tal vez", "paulo Londra");
-    carousel__lista.appendChild(card)
-    
+  elementosLista(padre){
+    this.añadirElemento("h2", "lista__titulo", padre, this.genero)
+    this.añadirElemento("hr", "lista__separador", padre)
+    let carousel = this.añadirElemento("div", "carousel", padre)
+    let carouselCanciones  = this.añadirElemento("div", "carousel__canciones", carousel)
+    this.elementosCarousel(carouselCanciones);
   }
 
-  crearImagenes(card, src){
-    let img = document.createElement("img");
-    img.setAttribute("src", src)
-    img.setAttribute("class", "card-img-top");
-    card.appendChild(img)
-
+  elementosCarousel(padre){
+    let buttonLeft = this.añadirElemento("button", "carousel__before", padre)
+    this.añadirElemento("i", "fas fa-chevron-left", buttonLeft)
+    for(let i = 0; i < this.noTarjetas;i++){
+      this.cards(padre,i)  
+    }
+    let buttonRigth = this.añadirElemento("button", "carousel__next", padre);
+    this.añadirElemento("i", "fas fa-chevron-right", buttonRigth)
   }
 
-  cardBody(card,cancion, autor){
-    let cardBody = document.createElement("div"); 
-    cardBody.setAttribute("class", "card-body");
-    this.añadirElemento("h5", "card-title", cardBody, cancion);
-    this.añadirElemento("p", "card-text", cardBody, autor)
-    card.appendChild(cardBody)
-    this.añadirBotones("fas", "fa-play", "card__play", card)
-    return cardBody
+  cards(padre,i){
+    console.log(padre)
+      let card = this.añadirElemento("div", "card", padre)
+      this.crearTarjeta(card,i)
+      return card
   }
-  
+
+  crearTarjeta(padre, position){
+    this.añadirElemento("img", "card-img-top", padre, undefined, this.srcImg[position])
+    let cardbody = this.añadirElemento("div", "card-body", padre)
+    this.añadirElemento("h5", "card-title", cardbody, this.canciones[position])
+    this.añadirElemento("p", "card-text", cardbody, this.autores[position])
+    this.reproductor(padre)
+  }
+
+  reproductor(padre){
+    let play = this.añadirElemento("button", `card__play`, padre);
+    this.añadirElemento("i", "fas fa-play", play)
+  }
 
 }
 
-new lista("Rock");
-new lista("baby")
+let rutas = ["img/1.png","img/1.png"]
+let canciones = ["tal vez", "adan y eva"]
+let autores = ["paulo londra", "paulo londra"]
+
+new lista("Rock", 2, rutas, canciones, autores);
+new lista("Pop", 2, rutas, canciones, autores)
+
 
