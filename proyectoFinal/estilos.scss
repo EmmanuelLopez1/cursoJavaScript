@@ -6,38 +6,44 @@ $boton: #1460fa;
   padding: 0px;
 }
 
+
 //POSICIONAMIENTO DEL CONTENEDOR Y SUS ELEMETOS
 .contenedor {
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  grid-template-rows: 13% 70% 17%;
-  grid-template-areas:
-    "side head"
-    "side main"
-    "reproductor reproductor";
-  .header {
+  .header{
+    width: 80%;
+    margin: 0px 0px 0px 20%;
+    position: fixed;
     border-bottom: 1px solid $border;
-    grid-area: head;
+    background-color: white;
   }
-  .side {
-    border-right: 1px solid $border;
-    grid-area: side;
+  .main{
+    margin-left: 20%;
+    padding-top: 50px;
   }
-  .main {
-    grid-area: main;
+  .side{
+    width: 20%;
+    height: 89vh;
+    position: fixed;
+    margin: 0px 0px 0px 0px;
   }
-  .reproductor {
+  .reproductor{
+    width: 100%;
+    height: 80px;
+    margin: -115px 0px 0px 0px;
+    position: fixed;
     border-top: 1px solid $border;
-    grid-area: reproductor;
+    background-color:white;
   }
-}
+ 
 
+}
 
 //ESTILOS DE LOS ELEMENTOS
 .contenedor {
   .header {
+    height: 80px;
     align-items: center;
     display: flex;
     .buscador {
@@ -70,6 +76,7 @@ $boton: #1460fa;
       }
     }
     .menu {
+      margin: 0px;
       width: 50%;
       display: flex;
       justify-content: space-around;
@@ -159,7 +166,7 @@ $boton: #1460fa;
     }
   }
   .main {
-    overflow: hidden;
+    scroll-behavior:inherit;
       .lista{
           width: 90%;
           margin: 25px auto 0px; 
@@ -182,7 +189,6 @@ $boton: #1460fa;
               }
               &__lista{
                   width: 92%;
-                  height: 500px;
               }
               &__before{
                 margin-top: 35px;
@@ -199,7 +205,9 @@ $boton: #1460fa;
               .card{
                   margin-right: 20px;
                   cursor: pointer;
-                  
+                  img{
+                    width: 230px;
+                  }
               &__play{
                 position: absolute;
                 margin-top: -90px;

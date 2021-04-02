@@ -30,7 +30,7 @@ class lista{
     this.añadirElemento("hr", "lista__separador", lista)
     this.carousel = this.añadirElemento("div", "carousel", lista)
     this.crearCarousel();
-    main.appendChild(lista)
+    main.append(lista)
     
   }
 
@@ -92,4 +92,5 @@ class lista{
 }
 
 new lista("Rock");
+new lista("baby")
 

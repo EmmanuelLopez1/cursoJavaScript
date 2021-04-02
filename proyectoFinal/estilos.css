@@ -6,28 +6,35 @@
 .contenedor {
   width: 100%;
   height: 100vh;
-  display: grid;
-  grid-template-columns: 15% 85%;
-  grid-template-rows: 13% 70% 17%;
-  grid-template-areas: "side head" "side main" "reproductor reproductor";
 }
 .contenedor .header {
+  width: 80%;
+  margin: 0px 0px 0px 20%;
+  position: fixed;
   border-bottom: 1px solid gold;
-  grid-area: head;
-}
-.contenedor .side {
-  border-right: 1px solid gold;
-  grid-area: side;
+  background-color: white;
 }
 .contenedor .main {
-  grid-area: main;
+  margin-left: 20%;
+  padding-top: 50px;
+}
+.contenedor .side {
+  width: 20%;
+  height: 89vh;
+  position: fixed;
+  margin: 0px 0px 0px 0px;
 }
 .contenedor .reproductor {
+  width: 100%;
+  height: 80px;
+  margin: -115px 0px 0px 0px;
+  position: fixed;
   border-top: 1px solid gold;
-  grid-area: reproductor;
+  background-color: white;
 }
 
 .contenedor .header {
+  height: 80px;
   align-items: center;
   display: flex;
 }
@@ -61,6 +68,7 @@
   cursor: pointer;
 }
 .contenedor .header .menu {
+  margin: 0px;
   width: 50%;
   display: flex;
   justify-content: space-around;
@@ -149,7 +157,7 @@
   height: 50px;
 }
 .contenedor .main {
-  overflow: hidden;
+  scroll-behavior: inherit;
 }
 .contenedor .main .lista {
   width: 90%;
@@ -173,7 +181,6 @@
 }
 .contenedor .main .lista .carousel__lista {
   width: 92%;
-  height: 500px;
 }
 .contenedor .main .lista .carousel__before, .contenedor .main .lista .carousel__next {
   margin-top: 35px;
@@ -187,6 +194,9 @@
 .contenedor .main .lista .carousel .card {
   margin-right: 20px;
   cursor: pointer;
+}
+.contenedor .main .lista .carousel .card img {
+  width: 230px;
 }
 .contenedor .main .lista .carousel .card__play {
   position: absolute;
